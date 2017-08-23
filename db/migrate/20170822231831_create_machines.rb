@@ -6,5 +6,6 @@ class CreateMachines < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :machines, :mid
   end
 end

@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20170822232040) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "machines", ["mid"], name: "index_machines_on_mid"
+
   create_table "results", force: :cascade do |t|
     t.string   "min"
     t.string   "max"
@@ -27,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170822232040) do
     t.string   "exps"
     t.integer  "machine_id"
     t.string   "line"
+    t.string   "ideal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

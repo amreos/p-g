@@ -7,6 +7,7 @@ class CreateResults < ActiveRecord::Migration
       t.string :exps
       t.references :machine, index: true, foreign_key: true
       t.string :line
+      t.string :ideal
 
       t.timestamps null: false
     end
