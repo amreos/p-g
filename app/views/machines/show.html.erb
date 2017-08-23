@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @machine.name %>
+</p>
+
+<p>
+  <strong>Mid:</strong>
+  <%= @machine.mid %>
+</p>
+<p><table>
+
+  <thead>
+    <tr>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+ <tbody>
+    <% @results = @machine.results %>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.min %></td>
+        <td><%= result.max %></td>
+        <td><%= result.time %></td>
+ 
+      </tr></table>
+
+    <% end %>
+</p>
+<%= link_to 'Edit', edit_machine_path(@machine) %> |
+<%= link_to 'Back', machines_path %>

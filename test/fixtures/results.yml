@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  min: MyString
+  max: MyString
+  time: MyString
+  exps: MyString
+  machine_id: 
+  line: MyString
+
+two:
+  min: MyString
+  max: MyString
+  time: MyString
+  exps: MyString
+  machine_id: 
+  line: MyString
