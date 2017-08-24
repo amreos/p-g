@@ -1,43 +1,44 @@
 <p id="notice"><%= notice %></p>
+<p><h1>New Listing</h1></p>
+
+<%= form_tag import_results_path, multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "upload", class: "btn btn-primary" %>
+<% end %>
+<br>
 
 <h1>Listing Results</h1>
-
-<table>
+<table class="table table-inverse">
   <thead>
     <tr>
-      <th>Min</th>
-      <th>Max</th>
-      <th>Time</th>
-      <th>Exps</th>
       <th>Line</th>
+      <th>Time</th>
+      <th>Deviation</th>
+      <th>Minimum</th>
+      <th>Ideal</th>
+      <th>Maximum</th>
       <th>Machine ID</th>
 
-      <th colspan="3"></th>
     </tr>
   </thead>
-
-  <tbody>
-    <% @results.each do |result| %>
+      <% @results.each do |result| %>
       <tr>
-        <td><%= result.min %></td>
-        <td><%= result.max %></td>
-        <td><%= result.time %></td>
-        <td><%= result.exps %></td>        
         <td><%= result.line %></td>
+        <td><%= result.time %></td>
+        <td><%= result.exps %></td>
+        <td><%= result.min %></td>        
+        <td><%= result.ideal %></td>      
+        <td><%= result.max %></td>
         <td><%= result.machine.mid %></td>
         <td><%= link_to 'Show', result %></td>
         <td><%= link_to 'Edit', edit_result_path(result) %></td>
         <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
 </table>
+  
+
 
 <br>
 
 <%= link_to 'New Result', new_result_path %>
-<br>
-<%= form_tag import_results_path, multipart: true do %>
-<%= file_field_tag :file %>
-<%= submit_tag "upload" %>
-<% end %>

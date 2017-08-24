@@ -4,13 +4,11 @@ class ResultsController < ApplicationController
  count = Result.import params[:file]
  redirect_to results_path, notice: "file imported successfully!"
  end
- def machin
-    xcdd = Result.import params[:file]
- end
+
   # GET /results
   # GET /results.json
   def index
-    @results = Result.all
+    @results = Result.all.order(created_at: :desc)
   end
 
   # GET /results/1

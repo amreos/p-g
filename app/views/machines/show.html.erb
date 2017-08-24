@@ -6,30 +6,34 @@
 </p>
 
 <p>
-  <strong>Mid:</strong>
+  <strong>Machine ID:</strong>
   <%= @machine.mid %>
 </p>
-<p><table>
-
+<p>
+  <table class="table table-inverse">
   <thead>
     <tr>
-      <th>Minimum</th>
-      <th>Maximum</th>
+      <th>Line</th>
       <th>Time</th>
-      <th colspan="3"></th>
+      <th>Deviation</th>
+      <th>Minimum</th>
+      <th>Ideal</th>
+      <th>Maximum</th>
     </tr>
   </thead>
- <tbody>
-    <% @results = @machine.results %>
-    <% @results.each do |result| %>
+      <% @results = @machine.results %>
+
+   <% @results.each do |result| %>
       <tr>
+        <td><%= result.line %></td>
+        <td><%= result.time %></td>
+        <td><%= result.exps %></td>
         <td><%= result.min %></td>
         <td><%= result.max %></td>
-        <td><%= result.time %></td>
- 
-      </tr></table>
-
+        <td><%= result.ideal %></td>
     <% end %>
+</table>
+  
 </p>
 <%= link_to 'Edit', edit_machine_path(@machine) %> |
 <%= link_to 'Back', machines_path %>
