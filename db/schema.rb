@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170822232040) do
     t.integer  "machine_id"
     t.string   "line"
     t.string   "ideal"
+    t.string   "midr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
