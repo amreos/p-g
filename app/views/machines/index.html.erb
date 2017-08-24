@@ -3,7 +3,7 @@
 
 <%= form_tag import_machines_path, multipart: true do %>
 <%= file_field_tag :file %>
-<%= submit_tag "upload" %>
+<%= submit_tag "upload", class: "btn btn-primary" %>
 <% end %></p><br>
 <h1>Listing Machines</h1>
 
