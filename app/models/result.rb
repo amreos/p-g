@@ -5,8 +5,13 @@ class Result < ActiveRecord::Base
         line, b, time, real, min, mean, max = row
         if row[3] =~ /SUMMARY/
        @midr = row[2].slice(1,3)
+      
        @mach = Machine.where(:mid => @midr).first
+        if @mach.blank?
+           puts "na"
+       else
        @result = Result.create(midr: time, machine_id: @mach.id  )
+      end
       else
        line, b, time, real, min, mean, max = row
        @result.update(line: line, min: min, exps: real, max: max, ideal: mean, time: time  ) 
